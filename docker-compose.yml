@@ -2,14 +2,14 @@ version: '3'
 services:
   influxdb:
     container_name: sysmon_influxdb
-    image: influxdb
+    image: influxdb:alpine
     ports:
       - 127.0.0.1:8086:8086
     volumes:
       - "./influxdb:/var/lib/influxdb"
       - "./influxdb.conf:/etc/influxdb/influxdb.conf"
   telegraf:
-    image: telegraf
+    image: telegraf:alpine
     container_name: sysmon_telegraf
     network_mode: "host"
     pid: "host"
