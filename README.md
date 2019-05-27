@@ -1,6 +1,16 @@
 # sysmon
+![version](https://img.shields.io/badge/version-1.0.0-blue.svg)
+[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/hassanjuniedi/sysmon/issues)
+[![HitCount](http://hits.dwyl.io/hassanjuniedi/sysmon.svg)](http://hits.dwyl.io/hassanjuniedi/sysmon)
+[![Join the chat at https://gitter.im/sysmon-docker/community](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/dwyl/?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+![size](https://img.shields.io/badge/size-200kB-green.svg)
+![telegraf size](https://img.shields.io/badge/telegraf%20image-80MB-green.svg)
+![influxdb size](https://img.shields.io/badge/influxdb%20image-137MB-green.svg)
+![grafana size](https://img.shields.io/badge/grafana%20image-248MB-green.svg)
 
 Monitor servers using Grafana, Influxdb,  telegraf
+
+![preview](https://i.imgur.com/VEGnSJT.png)
 
 ## Getting Started
 
@@ -50,6 +60,8 @@ username: admin
 password: admin
 ```
 7. on the left side menu hover over the `cog` icon and select `data sources` from the menu.
+
+![datasources](https://i.imgur.com/voxgUTu.jpg)
 
 8. select the `InfluxDB` from available options and enter the following:
 ```
