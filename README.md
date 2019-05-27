@@ -10,6 +10,9 @@ These instructions will get you a copy of the project up and running on your loc
 
 In order to run this project you have to install docker and docker-compose on your system.
 
+[Install Docker](https://docs.docker.com/install/)
+
+[Install Docker Compose](https://docs.docker.com/compose/install/)
 ### Installing
 
 1. Clone this repo to you machine:
@@ -41,17 +44,29 @@ export HOSTNAME='youhostname'
 sudo -E docker-compose up -d
 ```
 
-6. Visit http://localhost:3000 to open grafana web view you can sign in using the following credentials:
+6. Visit http://localhost:3030 to open grafana web view you can sign in using the following credentials:
 ```
 username: admin
 password: admin
 ```
-7. on the left side menu hover over the plus `+` icon and press on `import`.
+7. on the left side menu hover over the `cog` icon and select `data sources` from the menu.
 
-8. past the following url into text input with assosiated label `Grafana.com Dashboard`
+8. select the `InfluxDB` from available options and enter the following:
+```
+URL: http://influxdb:8086
+Database: telegraf
+```
+then click `save and test` button.
+
+8. on the left side menu hover over the plus `+` icon and press on `import`.
+
+9. past the following url into text input with assosiated label `Grafana.com Dashboard`
+```
 https://grafana.com/dashboards/5955
+``` 
 and press load button.
 
+10. In the import view select the influxDB source and press `import` button.
 
 ## Versioning
 
