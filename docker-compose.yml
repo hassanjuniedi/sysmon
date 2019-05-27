@@ -1,25 +1,33 @@
 version: '3'
 services:
   influxdb:
+    container_name: sysmon_influxdb
     image: influxdb
-    ports:
-      - "8083:8083"
-      - "8086:8086"
-      - "8090:8090"
     volumes:
       - "./influxdb:/var/lib/influxdb"
       - "./influxdb.conf:/etc/influxdb/influxdb.conf"
   telegraf:
     image: telegraf
     container_name: sysmon_telegraf
-    links:
-      - influxdb
+    network_mode: "host"
+    pid: "host"
     volumes:
-      - ./telegraf.conf:/etc/telegraf/telegraf.conf
+      - ./telegraf.conf:/etc/telegraf/telegraf.conf:ro
+      - /:/hostfs:ro
+      - /etc:/hostfs/etc:ro
+      - /proc:/hostfs/proc:ro
+      - /sys:/hostfs/sys:ro
+      - /var/run/utmp:/var/run/utmp:ro
+    environment:
+      - HOST_ETC=/hostfs/etc
+      - HOST_PROC=/hostfs/proc
+      - HOST_SYS=/hostfs/sys
+      - HOST_MOUNT_PREFIX=/hostfs
   grafana:
     image: grafana/grafana
+    container_name: sysmon_grafana
     ports:
-      - "3030:3000"
+     - "3030:3000"
     volumes:
       - "./grafana:/var/lib/grafana"
     user: "472"
