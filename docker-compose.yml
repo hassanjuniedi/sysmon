@@ -26,9 +26,13 @@ services:
       - HOST_PROC=/hostfs/proc
       - HOST_SYS=/hostfs/sys
       - HOST_MOUNT_PREFIX=/hostfs
+    depends_on:
+      - influxdb
   grafana:
     image: grafana/grafana
     container_name: sysmon_grafana
+    depends_on:
+      - influxdb
     ports:
      - "3030:3000"
     volumes:
