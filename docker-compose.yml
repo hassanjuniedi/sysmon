@@ -3,6 +3,8 @@ services:
   influxdb:
     container_name: sysmon_influxdb
     image: influxdb
+    ports:
+      - 127.0.0.1:8086:8086
     volumes:
       - "./influxdb:/var/lib/influxdb"
       - "./influxdb.conf:/etc/influxdb/influxdb.conf"
