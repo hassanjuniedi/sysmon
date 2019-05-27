@@ -2,6 +2,7 @@
 
 Monitor servers using Grafana, Influxdb,  telegraf
 
+![preview](https://i.imgur.com/VEGnSJT.png)
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
@@ -50,6 +51,8 @@ username: admin
 password: admin
 ```
 7. on the left side menu hover over the `cog` icon and select `data sources` from the menu.
+
+![datasources](https://i.imgur.com/voxgUTu.jpg)
 
 8. select the `InfluxDB` from available options and enter the following:
 ```
