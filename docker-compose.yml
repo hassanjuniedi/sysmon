@@ -19,6 +19,7 @@ services:
       - /sys:/hostfs/sys:ro
       - /var/run/utmp:/var/run/utmp:ro
     environment:
+      - HOSTNAME=$HOSTNAME
       - HOST_ETC=/hostfs/etc
       - HOST_PROC=/hostfs/proc
       - HOST_SYS=/hostfs/sys
